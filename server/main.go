@@ -164,7 +164,7 @@ func basicCRUDHandler() http.Handler {
 					}
 				}
 
-				w.Write([]byte("OK,Update"))
+				w.Write([]byte("OK,Update")) // Responding in CSV format
 
 			}
 		}
@@ -211,7 +211,7 @@ func basicCRUDHandler() http.Handler {
 				p = append(p, prec) // This is not optimal but this is just an example
 			}
 
-			w.Write([]byte("OK,Delete"))
+			w.Write([]byte("OK,Delete")) // Responding in CSV format
 		}
 	})
 }
