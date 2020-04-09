@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "44c0ebec-71e5-458b-9fd9-99e5b077ce8f",
+		"name": "WebCSV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Server",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000",
+							"host": [
+								"localhost"
+							],
+							"port": "8000"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Schema",
+								"value": "ver:1.0,hdr:false,del:,; LastName:string(50),FirstName:string(50),MiddleName:string(50),Age:int,Height:decimal(13,3),Weight:decimal(13,3),Alive:bool,DateBorn:date,LastUpdated:datetime",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Pike,Robert,C,63,8.7,60.6,true,1956-10-08,2020-04-08T14:00:00Z\r\nGriesemer,Robert,C,25,8.7,8.9,false,1995-09-01,2020-04-08T14:00:00Z\r\nSmith,John,Porter,65,6.7,6.8,true,1955-08-08,2020-04-08T14:00:00Z\r\nChi,Kwan,Tai,35,7.7,20.9,true,1985-11-08,2020-04-08T14:00:00Z",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Schema",
+								"value": "ver:1.0,hdr:false,del:,; LastName:string(50),FirstName:string(50),MiddleName:string(50),Age:int,Height:decimal(13,3),Weight:decimal(13,3),Alive:bool,DateBorn:date,LastUpdated:datetime",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Chi,Kwan,Tai,34,7.7,20.9,true,1986-12-08,2020-04-08T14:00:00Z"
+						},
+						"url": {
+							"raw": "localhost:8000/?ln=Chi&fn=Kwan&mn=Tai",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "ln",
+									"value": "Chi"
+								},
+								{
+									"key": "fn",
+									"value": "Kwan"
+								},
+								{
+									"key": "mn",
+									"value": "Tai"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Schema",
+								"value": "ver:1.0,hdr:false,del:,; LastName:string(50),FirstName:string(50),MiddleName:string(50),Age:int,Height:decimal(13,3),Weight:decimal(13,3),Alive:bool,DateBorn:date,LastUpdated:datetime",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8000/?ln=Chi&fn=Kwan&mn=Tai",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "ln",
+									"value": "Chi"
+								},
+								{
+									"key": "fn",
+									"value": "Kwan"
+								},
+								{
+									"key": "mn",
+									"value": "Tai"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
